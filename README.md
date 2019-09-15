@@ -9,11 +9,11 @@ Languages used:
 
 Screenshots from the web app:
 
-a. Landing page
+**Landing page**
 
 ![alt text](https://github.com/ANDRYA005/Internal-Hockey-League-Web-App/blob/master/Screenshots/Capture.PNG)
 
-b. Fantasy page
+**Fantasy page**
 
 ![alt text](https://github.com/ANDRYA005/Internal-Hockey-League-Web-App/blob/master/Screenshots/Capture1.PNG)
 
