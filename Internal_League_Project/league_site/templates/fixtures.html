@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 align='center' class='basicHeadings'>Fixtures</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm table-responsive">
+        <table class="table table-dark table-hover table-sm">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+
+            {% regroup fixtures by date as fixture_list %}
+
+            <tbody>
+            {% for matches in fixture_list %}
+              {% if forloop.counter == 1 %}
+              <tr class='header'>
+                <td class='position_fantasy' colspan="7">{{ matches.grouper }} &nbsp;<i class="arrow down"></i></td>
+              </tr>
+              {% else %}
+              <tr class='header'>
+                <td class='position_fantasy' colspan="7">{{ matches.grouper }} &nbsp;<i class="arrow up"></i></td>
+              </tr>
+              {% endif %}
+              {% for match in matches.list %}
+              {% if match.team1.gender == 'F' %}
+              <tr class="hideAble womenFixture{{ forloop.parentloop.counter }}">
+              {% else %}
+              <tr class="hideAble menFixture{{ forloop.parentloop.counter }}">
+              {% endif %}
+              <!-- <tr class="hideAble"> -->
+                <td><a href="{% url 'league_site:team_detail' pk=match.team1.pk %}">{{ match.team1 }}</a></td>
+                <td><strong>vs</strong></td>
+                <td><a href="{% url 'league_site:team_detail' pk=match.team2.pk %}">{{ match.team2 }}</a></td>
+                <td><strong>{{ match.time|time:"H:i" }}</strong></td>
+                {% if match.score_recorded == True %}
+                  <td nowrap="nowrap"><strong>{{ match.team1_goals }} - {{ match.team2_goals }}</strong></td>
+                {% else %}
+                  <td>No result yet</td>
+                {% endif %}
+              </tr>
+              {% empty %}
+                <li>No Teams yet.</li>
+              {% endfor %}
+          {% empty %}
+            <li>No Dates yet.</li>
+        {% endfor %}
+
+
+
+{% endblock %}

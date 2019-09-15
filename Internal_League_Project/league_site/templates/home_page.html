@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 titleColumn">
+      <h1 class="display-4 Title"> &nbspInternal&nbsp &nbspHockey&nbsp &nbspLeague&nbsp</h1>
+    </div>
+    <div class="col-lg-6 pictureColumn">
+      <div class="w3-content w3-section" id="bg">
+        <img class="mySlides img-fluid rounded mx-auto" src="../static/images/DicksWithSticks1.jpeg" height="100%">
+        <img class="mySlides img-fluid rounded mx-auto" src="../static/images/girlsHockey.jpg" height="100%">
+        <img class="mySlides img-fluid rounded mx-auto" src="../static/images/Becs-UCT-MPa.jpg" height="100%">
+        <img class="mySlides img-fluid rounded mx-auto" src="../static/images/Dicktators_team_pic.jpg" height="100%">
+        <img class="mySlides img-fluid rounded mx-auto" src="../static/images/UCTHockeyPhoto.jpg" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="container containerHome">
+    <h1 class="display-4 Title"> &nbspInternal&nbsp &nbspHockey&nbsp &nbspLeague&nbsp</h1>
+  </div>
+
+  <div class="container containerHomeRight">
+    <div class="w3-content w3-section" id="bg">
+      <img class="mySlides" src="../static/images/haboolieAstro2.jpg">
+      <img class="mySlides" src="../static/images/Becs-UCT-MPa.jpg">
+    </div> -->
+
+    <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 4000); // Change image every 7 seconds
+    }
+    </script>
+  </div>
+
+{% endblock %}

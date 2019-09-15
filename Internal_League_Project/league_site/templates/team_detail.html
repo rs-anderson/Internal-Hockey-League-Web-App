@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+  <h1 class="teamName">{{team_detail.name}}</h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md padder align-self-top">
+        {% if team_detail.team_pic.url != null %}
+        <img src="{{ team_detail.team_pic.url }}" height='90%' width='90%' class="img-fluid rounded mx-auto d-block teamPic" align="top" alt="Error">
+        {% else %}
+          <p>No Team Photo Yet</p>
+        {% endif %}
+      </div>
+      <div class="col-md">
+        <h1 class="basicHeadings removeTopMargin">Players:</h1>
+        <div class="row">
+        <div class="col-md">
+          {% for player in player_list %}
+              <p class="TeamPlayers">{{forloop.counter}}. <a href="{% url 'league_site:player_detail' pk=player.pk %}">{{ player.name }}</a></p>
+          {% if forloop.counter == 11 %}
+              </div>
+              <div class="col-md">
+          {% endif %}
+          {% empty %}
+            <p>No Players Yet</p>
+          {% endfor %}
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

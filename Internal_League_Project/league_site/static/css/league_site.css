@@ -1,0 +1,412 @@
+/* Need to change top and bottom of image/name group for mobile */
+
+html *{
+  font-family: 'Amatic SC', cursive;
+
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.objectFit1{
+  object-fit: scale-down;
+}
+.objectFit2{
+  object-fit: contain;
+}
+.objectFit3{
+  object-fit: cover;
+}
+
+.mainContainer{
+  /* background-color: green; */
+  padding-bottom: 0%;
+  margin-bottom: 10%;
+  position: relative;;
+}
+
+/* .containerHome{
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  /* margin-right: 70%; */
+  /* width: 30%;
+  text-align: left;
+} */
+
+/* .containerHomeRight{
+  position: absolute
+  right: 0px;
+  width: 30%;
+} */
+
+.animated {
+   -webkit-animation-duration: 1s;
+   animation-duration: 1s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+.fadeIn {
+   -webkit-animation-name: fadeIn;
+   animation-name: fadeIn;
+}
+
+.navbar{
+  padding-bottom: 0%;
+  padding-top: 0%;
+}
+
+.navElements{
+    /* font-family: sans-serif; */
+    font-size: 2.6em;
+    margin-bottom: 10px;
+    background-color: #003559;
+    opacity: 0.75;
+    height: 15%;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.navbar-nav > li > a{
+  /* color:#B9D6F2; */
+  color: white;
+}
+
+.navbar-nav > li > a:hover{
+  color:#0353A4;
+}
+
+.custom-toggler.navbar-toggler{
+  border-color: #B9D6F2;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#B9D6F2' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.dropdown-item{
+  font-size: 1.5em;
+}
+
+.navbar-default .navbar-toggler .icon-bar:hover {
+  background-color: orange; /* Changes toggle color on hover */
+}
+
+body{
+    background-image: url("../images/haboolieAstro2.jpg"); /*Backgroung photo of UCT*/
+    /* color:#B9D6F2; */
+    color: white;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-color: grey; /* Used if the image is unavailable */
+    background-attachment: fixed;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 100% 100%; /* Resize the background image to cover the entire container */
+}
+
+table {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+tbody{
+  background-color: black;
+}
+
+.teamName{
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+
+i {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.fantasyCounter{
+  font-family: 'Amatic SC', cursive;
+}
+
+/* .menFixture{
+  background-color: red;
+} */
+
+.womenFixture{
+  background-color: #2b2d30;
+}
+
+.teamCounter{
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.Title{
+  font-size: 6.5em;
+  text-align: left;
+  color: #4594C1;
+  font-family: 'Amatic SC', cursive;
+  background-color: #003559;
+  color: #fff;
+  display: inline;
+  line-height: 140px;
+  opacity: 0.75;
+}
+
+.pageHeading{
+  color: #134074;
+}
+
+
+.jumbotron {
+  background: rgba(198, 230, 255, 0.7);
+  margin-top: 3%;
+}
+
+.TeamPlayers{
+  font-size: 1.9em;
+  font-weight: bold;
+  /* background-color: #003559;
+  opacity: 0.7; */
+}
+
+.teamPic{
+  padding-top: 10px;
+}
+
+.removeTopMargin{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  font-family: 'Amatic SC', cursive;
+}
+
+.playerStats{
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.3em;
+}
+
+.basicHeadings{
+  text-align: center;
+  font-size: 3.4em;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+
+}
+
+.position_fantasy{
+  text-align: center;
+  font-size: 1.9em;
+  background-color:#003559;
+  opacity: 0.75;
+  /* color:#B9D6F2; */
+  color:white;
+}
+
+.logHeading{
+  background-color:#003559;
+  opacity: 0.75;
+}
+
+td{
+  font-size: 1.2em;
+}
+
+tr.header{
+    cursor:pointer;
+}
+
+.padder{
+  padding-bottom: 50px;
+}
+
+
+.field{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.field_image {
+  z-index: 1;
+  position: relative;
+  margin-left: auto;
+  max-width:50%;
+  min-width:350px;
+  max-height:500px;
+  /* min-height:21%; */
+}
+
+@media screen and (max-width: 767px) {
+
+  body{
+      background-image: url("../images/girlsHockeyGray.jpg"); /*Backgroung photo of UCT*/
+      /* color:#B9D6F2; */
+      color: white;
+      background-color: #cccccc; /* Used if the image is unavailable */
+      background-color: grey; /* Used if the image is unavailable */
+      background-attachment: fixed;
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: 100% 100%; /* Resize the background image to cover the entire container */
+  }
+
+}
+    /* .field_image{
+      left: -35%;
+      height:40%;
+      width:40%;
+    } */
+    /* .group_f1 {
+      display: block;
+      float: left;
+      top: 40%;
+      left: 40%;
+    } */
+/* } */
+
+/* #wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+} */
+
+.jersey_image{
+  padding-bottom: 6px;
+}
+
+
+.fantasy_image_name{
+  /* display: inline-block; */
+  /* margin: auto; */
+  margin-bottom: 0%;
+  position: absolute;
+  height:20%;
+  width: 20%;
+  font-size: 70%;
+  text-align: center;
+  line-height: 3px;
+  min-width: 10px;
+  min-height: 10px;
+  z-index: 2;
+}
+
+.group_f1 {
+  top: 8%;
+  left: 40%;
+  z-index: 2;
+}
+
+
+.group_f2 {
+  top: 15%;
+  left: 27.5%;
+  z-index: 2;
+}
+
+.group_f3 {
+  top: 15%;
+  left: 52.5%;
+}
+
+.group_m1 {
+  top: 35%;
+  left: 24.5%;
+}
+
+.group_m2 {
+  top: 41%;
+  left: 34.5%;
+}
+
+.group_m3 {
+  top: 41%;
+  left: 45.5%;
+}
+
+.group_m4 {
+  top: 35%;
+  left: 55.5%;
+}
+
+
+.group_d1 {
+  top: 60%;
+  left: 24.5%;
+}
+
+.group_d2 {
+  top: 65%;
+  left: 34.5%;
+}
+
+.group_d3 {
+  top: 65%;
+  left: 45.5%;
+}
+
+.group_d4 {
+  top: 60%;
+  left: 55.5%;
+}
+
+.fantasyPlayer{
+  font-size: 2em;
+  color:#003559;
+  padding-top: 2px;
+  word-wrap: break-word;
+}
+
+.fantasyPoints{
+  font-size: 2em;
+  color:#003559;
+  padding-top: 2px;
+}
+
+/* #bg img{
+  -webkit-filter: grayscale(20%);
+  filter: grayscale(20%);
+} */

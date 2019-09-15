@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="parent">
+   <img src="{% static 'images/FinalField.png' %}" class="img-fluid rounded mx-auto d-block field_image" height='20%' width='50%' alt="Error">
+   <!-- <img src="{% static 'images/FinalField.png' %}" class="rounded field_image" height='20%' width='50%' alt="Error"> -->
+
+   {% for player in fantasy_list_f %}
+      <div class="container fantasy_image_name group2_f{{forloop.counter}} group_f{{forloop.counter}}">
+        <!-- <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image_{{player.team.name}}" height='40%' width='40%' alt="Error"> -->
+        {% if player.team.jersey.url != null %}
+        <img src="{{ player.team.jersey.url }}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% else %}
+          <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% endif %}
+        <p class="fantasyPlayer"><strong><a href="{% url 'league_site:player_detail' pk=player.pk %}">{{ player.name }}</a></strong></p>
+        <p class="fantasyPoints">{{ player.fantasy_points }}</p>
+     </div>
+   {% empty %}
+     <li>No Players Yet.</li>
+   {% endfor %}
+
+   {% for player in fantasy_list_m %}
+      <div class="container fantasy_image_name group_m{{forloop.counter}}">
+        <!-- <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image_{{player.team.name}}" height='40%' width='40%' alt="Error"> -->
+        {% if player.team.jersey.url != null %}
+        <img src="{{ player.team.jersey.url }}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% else %}
+          <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% endif %}
+        <p class="fantasyPlayer"><strong><a href="{% url 'league_site:player_detail' pk=player.pk %}">{{ player.name }}</a></strong></p>
+        <p class="fantasyPoints">{{ player.fantasy_points }}</p>
+     </div>
+   {% empty %}
+     <li>No Players Yet.</li>
+   {% endfor %}
+
+   {% for player in fantasy_list_d %}
+      <div class="container fantasy_image_name group_d{{forloop.counter}}">
+        <!-- <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image_{{player.team.name}}" height='40%' width='40%' alt="Error"> -->
+        {% if player.team.jersey.url != null %}
+        <img src="{{ player.team.jersey.url }}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% else %}
+          <img src="{% static 'images/Jersey1.png' %}" class="img-fluid jersey_image" height='40%' width='40%' alt="Error">
+        {% endif %}
+        <p class="fantasyPlayer"><strong><a href="{% url 'league_site:player_detail' pk=player.pk %}">{{ player.name }}</a></strong></p>
+        <p class="fantasyPoints">{{ player.fantasy_points }}</p>
+     </div>
+   {% empty %}
+     <li>No Players Yet.</li>
+   {% endfor %}
+
+</div>
+
+{% endblock %}

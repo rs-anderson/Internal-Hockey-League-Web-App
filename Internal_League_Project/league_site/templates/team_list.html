@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <h1 class="basicHeadings">{{ gender }} Teams</h1>
+
+  <ol>
+    {% for team in teams %}
+
+    <h2><span class="teamCounter">{{ forloop.counter }}. </span><a class="TeamPlayers" href="{% url 'league_site:team_detail' pk=team.pk %}">{{ team.name }}</a></h2>
+    {% empty %}
+      <li>No Teams yet.</li>
+    {% endfor %}
+  </ol>
+
+
+{% endblock %}

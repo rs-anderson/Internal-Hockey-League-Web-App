@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+  <h1 class="basicHeadings">Please Login</h1>
+  <p>Login is only for Tucker</p>
+
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+
+    <label for="username"></label>
+    <input type="text" name="username" placeholder="Username">
+
+    <label for="password"></label>
+    <input type="password" name="password" placeholder="Password">
+
+    <input type="submit" value="Login">
+  </form>
+    <input type="hidden" name="next" value="{{next}}">
+    <p></p>
+    <p class='text-danger'>{{ error }}</p>
+
+
+
+
+
+
+{% endblock %}

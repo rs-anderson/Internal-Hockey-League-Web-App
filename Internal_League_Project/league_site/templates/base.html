@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>UCT Internal League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome for icons -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> -->
+
+    <!-- JQuery (for dropdowns) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+
+      <!-- Java Script -->
+      <script src="/../static/js/navbar.js"></script>
+
+      <script>
+        $(document).ready(function(){
+          $('table tr:not(.header,.logTable,.menFixture1,.fantasyLog)').hide();
+          $(".date1").toggleClass('down');
+          $(".header").click(function(){
+          $(this).nextUntil('tr.header').toggle();
+          $("i", this).toggleClass('up down');
+          });
+          // $('table tr:not(.header,.logTable)').hide();
+        });
+      </script>
+
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "css/league_site.css" %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet"> -->
+
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar sticky-top navbar-expand-lg navElements navHover">
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "images/transparent_round_logo.gif" %}" width="70" height="70"  alt="Error!" /></a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Teams
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'league_site:men_team_list' %}">Men's League</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'league_site:women_team_list' %}">Ladies' League</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'league_site:fixtures' %}">Fixtures/Results</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Results</a>
+          </li> -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'league_site:men_log' %}">Log</a>
+          </li>
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Log
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'league_site:men_log' %}">Men's Log</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'league_site:women_log' %}">Ladies' Log</a>
+            </div>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Fantasy
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'league_site:fantasy_log' %}">Standings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'league_site:fantasy_team' %}">Team</a>
+            </div>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+            <li class="nav-item">
+                <a class="nav-link" class='nav-item navbar-right ' href="{% url 'login' %}">Login</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTENT Block -->
+
+
+
+    <!-- <div class="content container animated fadeIn">
+      <div class="jumbotron">
+
+
+      </div>
+    </div> -->
+
+
+
+
+
+    <div class="content container animated fadeIn mainContainer">
+
+      {% block content %}
+      {% endblock %}
+    </div>
+
+
+
+
+  </body>
+</html>

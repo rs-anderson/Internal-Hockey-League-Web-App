@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <h1 class="teamName">{{player_detail.name}}</h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md padder align-self-top">
+        {% if player_detail.player_pic.url != null %}
+        <img src="{{ player_detail.player_pic.url }}" height='90%' width='90%' class="img-fluid rounded mx-auto d-block teamPic" alt="Error">
+        {% else %}
+          <p>No Player Photo Yet</p>
+        {% endif %}
+      </div>
+      <div class="col-md">
+        <h3 class="playerStats"> Team: <strong><a href="{% url 'league_site:team_detail' pk=player_detail.team.pk %}"> {{player_detail.team}} </a> </strong></h3>
+        <h3 class="playerStats"> Position: <strong>{{player_detail.position}}</strong> </h3>
+        <h3 class="playerStats"> Goals: <strong>{{player_detail.goals}}</strong></h3>
+        <h3 class="playerStats"> Assists: <strong> {{player_detail.assists}}</strong></h3>
+        <h3 class="playerStats"> Clean Sheets: <strong> {{player_detail.clean_sheets}}</strong></h3>
+        <h3 class="playerStats"> Fantasy Points: <strong> {{player_detail.fantasy_points}}</strong></h3>
+        <h3 class="playerStats"> Fantasy Ranking: <strong> {{player_detail.ranking}}</strong></h3>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}
