@@ -23,7 +23,7 @@ MEDIA_DIR = os.path.join(BASE_DIR,'league_site/media')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xov_jt#)2lf6kw!q^+iy9*c2=y+c-032##4su1dhls!j^^h1#s'
+SECRET_KEY = "YOUR SECURITY KEY"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
