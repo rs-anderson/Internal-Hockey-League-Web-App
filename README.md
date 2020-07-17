@@ -1,5 +1,5 @@
 # Internal-Hockey-League-Web-App-
-A web app for use by the UCT internal hockey league (http://internalleague.co.za/). Developed using Django.
+A web app for use by the UCT internal hockey league (was found at http://internalleague.co.za/, however, I took it down). Developed using Django.
 
 Languages used:
 1. Python
