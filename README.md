@@ -17,4 +17,4 @@ Screenshots from the web app:
 
 ![alt text](https://github.com/ANDRYA005/Internal-Hockey-League-Web-App/blob/master/Screenshots/Capture1.PNG)
 
-The rest of the site can be seen at http://internalleague.co.za/.
+
