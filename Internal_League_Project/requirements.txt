@@ -2,7 +2,7 @@ argon2-cffi==18.3.0
 
 bcrypt==3.1.5
 
-Django==2.1.4
+Django==2.2.24
 Pillow==5.2.0
 
 gunicorn==19.9.0
